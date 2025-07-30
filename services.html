@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services - Aditya Singh</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">Aditya Singh</div>
+        <div class="social-links">
+            <a href="#">FB</a>
+            <a href="#">TW</a>
+            <a href="#">IN</a>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="Assignment_1.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html" class="active">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="services-page" style="padding: 2rem; max-width: 1000px; margin: auto;">
+        <h1>My Services</h1>
+        <p>I offer high-quality web development services using modern technologies and best practices. Below are some of
+            the core services I provide:</p>
+
+        <div class="main-content">
+            <section class="card">
+                <h3>Full-Stack Web Development</h3>
+                <p>Build robust web applications using the MERN stack (MongoDB, Express, React, Node.js) with complete
+                    front-end and back-end integration.</p>
+            </section>
+
+            <section class="card">
+                <h3>Custom API Development</h3>
+                <p>Design and develop secure, scalable RESTful APIs for web and mobile applications with proper
+                    documentation and authentication.</p>
+            </section>
+
+            <section class="card">
+                <h3>Responsive UI Design</h3>
+                <p>Create responsive and interactive front-ends using HTML5, CSS3, and modern UI frameworks to ensure a
+                    seamless experience on all devices.</p>
+            </section>
+
+            <section class="card">
+                <h3>Project Deployment</h3>
+                <p>Deploy and host full-stack applications using platforms like Vercel, Render, or custom VPS setups
+                    with CI/CD workflows.</p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; <span id="year"></span> Aditya Singh. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

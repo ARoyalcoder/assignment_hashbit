@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - Aditya Singh</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">Aditya Singh</div>
+        <div class="social-links">
+            <a href="#">FB</a>
+            <a href="#">TW</a>
+            <a href="#">IN</a>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="Assignment_1.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="about-page" style="padding: 2rem; max-width: 900px; margin: auto;">
+        <h1>About Me</h1>
+        <p>Hello! I'm <strong>Aditya Singh</strong>, a passionate web developer currently pursuing
+            <strong>B.Tech</strong>. I have a deep interest in the tech field and love building modern web applications
+            that are efficient, user-friendly, and scalable.
+        </p>
+
+        <h2>My Skills</h2>
+        <ul>
+            <li>MERN Stack (MongoDB, Express.js, React.js, Node.js)</li>
+            <li>JavaScript, HTML5, CSS3</li>
+            <li>REST APIs and Full-Stack Development</li>
+            <li>Responsive UI Design</li>
+        </ul>
+
+        <h2>Interests</h2>
+        <p>When I'm not coding, I enjoy exploring new tech trends, reading about emerging technologies, and
+            experimenting with side projects to improve my skills.</p>
+
+        <h2>Goals</h2>
+        <p>My goal is to become a highly skilled full-stack developer and contribute to impactful projects that solve
+            real-world problems.</p>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; <span id="year"></span> Aditya Singh. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

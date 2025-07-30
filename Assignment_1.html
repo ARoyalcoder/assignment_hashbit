@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Webpage</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">MyLogo</div>
+        <div class="social-links">
+            <a href="#" target="_blank">FB</a>
+            <a href="#" target="_blank">TW</a>
+            <a href="#" target="_blank">IN</a>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="Assignment_1.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <h2>Sidebar</h2>
+            <p>Useful resources, links, announcements or contact info.</p>
+        </aside>
+
+        <main class="main-content">
+            <section class="card">
+                <h3>facebook</h3>
+                <img src="images (3).jpeg" alt="Image 1" />
+                <p>Facebook is one of the world’s largest social networking platforms, launched in 2004 by Mark
+                    Zuckerberg. It allows users to connect, share updates, photos, and join communities. Over the years,
+                    it has grown into a powerful platform for communication, business marketing, and global
+                    connectivity.</p>
+            </section>
+            <section class="card">
+                <h3>chatgpt</h3>
+                <img src="ChatGPT-logo-PNG-medium-size-white-green-background.png" alt="Image 2" />
+                <p>ChatGPT is an advanced AI language model developed by OpenAI. It can understand and generate
+                    human-like text based on prompts, making it useful for tasks like writing, coding help, answering
+                    questions, and conversation. It's built using deep learning techniques and trained on diverse
+                    internet data.</p>
+            </section>
+            <section class="card">
+                <h3>GEN AI</h3>
+                <img src="images (4).jpeg" alt="Image 3" />
+                <p>Generative AI refers to a class of artificial intelligence models that can create new content, such
+                    as text, images, music, and code. Using deep learning, it learns patterns from large datasets and
+                    generates outputs that mimic human creativity. It's widely used in chatbots, content creation,
+                    design, and innovation.</p>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; <span id="year"></span> All rights reserved. Designed by You.</p>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
