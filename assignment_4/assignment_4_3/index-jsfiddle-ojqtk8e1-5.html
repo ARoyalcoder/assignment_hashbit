@@ -2,6 +2,7 @@
 <html>
 
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,21 +10,22 @@
 
   <style>
     .text-here {
-    font-size: 55px;
-    font-family: sans-serif;
-    color: black;
-    text-decoration: none;
-    font-style: normal;
-    font-weight: normal;
-    line-height: normal;
-    text-align: left;
-    letter-spacing: normal;
-    word-spacing: normal;
-}
+      font-size: 55px;
+      font-family: sans-serif;
+      color: black;
+      text-decoration: none;
+      font-style: normal;
+      font-weight: normal;
+      line-height: normal;
+      text-align: left;
+      letter-spacing: normal;
+      word-spacing: normal;
+    }
   </style>
 
-  
+
 </head>
+
 <body>
   <!-- Task Statement
 
@@ -50,47 +52,101 @@ text-decoration: underline;, font-style: italic;, and font-weight: bold; CSS sho
 
 
 
-<!-- html code goes here -->
-<div class='text-here' id='text-container'>This is some example text</div>
+  <!-- html code goes here -->
+  <div class='text-here' id='text-container'>This is some example text</div>
 
 
-<input type="text" id="colorbox">
+  <input type="text" id="colorbox">
 
-<button id="colorchange">Change Colour</button>
+  <button id="colorchange">Change Colour</button>
 
-<br><br>
+  <br><br>
 
-<input type="range" id="fontsize" min="10" max="100" value="55">
-<br><br>
-
-
-<button id="italic" class="stylebt">Italics</button>
-<button id="underline" class="stylebt">Underline</button>
-<button id="bold" class="stylebt">Bold</button>
-
-<br><br>
+  <input type="range" id="fontsize" min="10" max="100" value="55">
+  <br><br>
 
 
-<select id="list">
-        <option value="serif">Serif</option>
-        <option value="sans-serif">Sans-Serif</option>
-        <option value="monospace">Monospace</option>
-        <option value="cursive">Cursive</option>
-        <option value="fantasy">Fantasy</option>
-    </select>
+  <button id="italic" class="stylebt">Italics</button>
+  <button id="underline" class="stylebt">Underline</button>
+  <button id="bold" class="stylebt">Bold</button>
+
+  <br><br>
 
 
-<br><br>
+  <select id="list">
+    <option value="serif">Serif</option>
+    <option value="sans-serif">Sans-Serif</option>
+    <option value="monospace">Monospace</option>
+    <option value="cursive">Cursive</option>
+    <option value="fantasy">Fantasy</option>
+  </select>
 
-<button id="getstyle">Get CSS</button>
 
-<br><br>
-<p id="css-props"></p>
+  <br><br>
+
+  <button id="getstyle">Get CSS</button>
+
+  <br><br>
+  <p id="css-props"></p>
 
 
 
   <script>
-    // javascript code goes here
+    const textContainer = document.getElementById('text-container');
+    const colorInput = document.getElementById('colorbox');
+    const colorChangeBtn = document.getElementById('colorchange');
+    const fontSizeSlider = document.getElementById('fontsize');
+    const italicBtn = document.getElementById('italic');
+    const underlineBtn = document.getElementById('underline');
+    const boldBtn = document.getElementById('bold');
+    const fontSelect = document.getElementById('list');
+    const getStyleBtn = document.getElementById('getstyle');
+    const cssPropsParagraph = document.getElementById('css-props');
+
+    colorChangeBtn.addEventListener('click', () => {
+      const color = colorInput.value;
+      textContainer.style.color = color;
+    });
+
+    fontSizeSlider.addEventListener('input', () => {
+      textContainer.style.fontSize = `${fontSizeSlider.value}px`;
+    });
+
+    italicBtn.addEventListener('click', () => {
+      textContainer.style.fontStyle =
+        textContainer.style.fontStyle === 'italic' ? 'normal' : 'italic';
+    });
+
+    underlineBtn.addEventListener('click', () => {
+      textContainer.style.textDecoration =
+        textContainer.style.textDecoration === 'underline' ? 'none' : 'underline';
+    });
+
+    boldBtn.addEventListener('click', () => {
+      textContainer.style.fontWeight =
+        textContainer.style.fontWeight === 'bold' ? 'normal' : 'bold';
+    });
+
+    fontSelect.addEventListener('change', () => {
+      textContainer.style.fontFamily = fontSelect.value;
+    });
+
+    getStyleBtn.addEventListener('click', () => {
+      const styles = window.getComputedStyle(textContainer);
+
+      const css = `
+      font-size: ${styles.fontSize};
+      font-family: ${styles.fontFamily.split(',')[0]};
+      color: ${colorInput.value || styles.color};
+      text-decoration: ${styles.textDecoration.includes('underline') ? 'underline' : 'none'};
+      font-style: ${styles.fontStyle};
+      font-weight: ${styles.fontWeight === '700' ? 'bold' : styles.fontWeight};
+    `.trim().replace(/\n\s+/g, ' ');
+
+      cssPropsParagraph.textContent = css;
+    });
   </script>
+
 </body>
+
 </html>
